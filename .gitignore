@@ -1,0 +1,19 @@
+# Ignorar archivos y carpetas generados automáticamente
+node_modules/
+/build/
+.DS_Store
+
+# Ignorar archivos de entorno
+.env
+
+# Ignorar archivos de construcción y dependencias del frontend
+frontend/node_modules/
+frontend/build/
+Frontend/package-lock.json
+Frontend/package.json
+
+# Ignorar archivos de dependencias del backend
+backend/node_modules/
+# Ignorar el archivo package-lock.json
+Backend/package-lock.json
+Backend/package.json
