@@ -3,11 +3,9 @@ const dbConnection = require('./config/config')
 const app = express()
 require('dotenv').config
 const PORT = process.env.PORT || 3000;
+const routes = require('./routes/taskRoutes')
 
-
-app.get('/tasks' ,(req, res) => {
-   
-})
+app.use('/', routes)
 
 dbConnection()
 
