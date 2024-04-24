@@ -73,6 +73,39 @@ const TaskController = {
             console.log(error)
 
         }   
+    },
+    async updateIncomplete (req, res) {
+        try{
+            const id = req.params._id
+            const updateTask = await Task.findByIdAndUpdate(
+                id, {
+                    completed: false
+                },{new:true}
+            )
+            if(!updateTask) {
+                return res.status(404).json({mensaje:'el task no existe'})
+            }
+            res.json(updateTask)
+        }catch(error) {
+            console.log(error)
+        }
+    },
+    async editTask (req, res) {
+        try{
+            const id = req.params._id
+            const {title} = req.body
+            const updateTask = await Task.findByIdAndUpdate(
+                id,{
+                    title
+                },{new: true}
+            )
+            if(!updateTask) {
+                return res.status(404).json ({mensaje:'el task no existe'})
+            }
+            res.json(updateTask)
+        }catch(error) {
+            console.log(error)
+        }
     }
 }
 
