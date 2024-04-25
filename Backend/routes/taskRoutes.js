@@ -10,6 +10,6 @@ router.get('/id/:_id', TaskController.getById)
 router.delete('/id/:_id',TaskController.deleteTask)
 router.put('/markascompleted/:_id', TaskController.updateCompleted)
 router.put('/markasincompleted/:_id', TaskController.updateIncomplete)
-router.put('/editTask', TaskController.editTask)
+router.put('/editTask/:_id', TaskController.editTask)
 
 module.exports = router;
