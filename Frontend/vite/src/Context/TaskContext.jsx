@@ -1,49 +1,36 @@
-import {createContext, useState, useEffect} from 'react';
-import {task as data} from '../Data/task';
 
-export const taskContent = createContext();
+import { createContext, useState, useEffect } from "react";
+import { tasks as data } from "../Data/tasks";
+
+export const TaskContext = createContext();
 
 export function TaskContextProvider(props) {
-    const [tasks, setTasks] = useState([]);
-
+    const [tasks, setTasks] = useState(data);
 
     function createTask(task) {
         setTasks([
             ...tasks,
             {
                 title: task.title,
-                id: task.length,
+                id: tasks.length,
                 description: task.description
             }
         ]);
     }
-    function editTask (taskId, updatedTask) {
-        setTasks(tasks.map(task => {
-            if(task.id === taskId) {
-                return{...task,...updatedTask}
-            }
-            return(task);
-        }))
-    }
+
     function deleteTask(taskId) {
-        const setTasks = tasks.filter((task) => task.id !== taskId)
+        setTasks(tasks.filter((task) => task.id !== taskId));
     }
 
-    useEffect(() => {
-        setTasks(data)
-    }, []);
-
-    return(
-        <TaskContextProvider 
+    return (
+        <TaskContext.Provider
             value={{
-                createTask,
-                editTask,
+                tasks,
                 deleteTask,
+                createTask,
             }}
-
         >
             {props.children}
-        </TaskContextProvider>
-    )
-
-} 
+        </TaskContext.Provider>
+    );
+}

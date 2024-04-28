@@ -1,4 +1,4 @@
-export const task = [
+export const tasks = [
     {
         id:0,
         title:"mi primera tarea",
@@ -13,7 +13,7 @@ export const task = [
 
     {
         id:2,
-        title:"mi segunda tarea",
+        title:"mi tercera tarea",
         description:"mi segunda tarea"
     }
 ]
