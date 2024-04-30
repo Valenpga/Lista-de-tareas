@@ -22,12 +22,20 @@ export function TaskContextProvider(props) {
         setTasks(tasks.filter((task) => task.id !== taskId));
     }
 
+
+    function editTask(taskId, updatedTask) {
+        setTasks(tasks.map((task) => (task.id === taskId ? { ...task, ...updatedTask } : task)));
+    }
+      
+    
+
     return (
         <TaskContext.Provider
             value={{
                 tasks,
                 deleteTask,
                 createTask,
+                editTask
             }}
         >
             {props.children}
