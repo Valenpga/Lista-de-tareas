@@ -6,6 +6,9 @@ const PORT = process.env.PORT || 3000;
 const routes = require('./routes/taskRoutes')
 
 app.use('/', routes)
+app.get('/favicon.ico', (req, res) => {
+    res.status(204).end(); 
+  });
 
 dbConnection()
 

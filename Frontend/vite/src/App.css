@@ -86,5 +86,13 @@ button:hover {
   background-color: #c82333;
 }
 
-
-
+body {
+  background-image: url('imagenes/glenn-carstens-peters-RLw-UC03Gwc-unsplash (1).jpg'); /* Ruta a tu imagen */
+  background-color: #f0f0f0;
+  background-size: cover; /* Ajustar tamaño de imagen para cubrir el fondo */
+  background-position: center; /* Posición de la imagen en el fondo */
+  display: flex; /* Para centrar contenido verticalmente */
+  justify-content: center; /* Para centrar contenido horizontalmente */
+  align-items: center; /* Para centrar contenido verticalmente */
+  overflow: hidden; /* Para evitar barras de desplazamiento */
+}
