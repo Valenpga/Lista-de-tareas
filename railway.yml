@@ -1,0 +1,17 @@
+name: lista-de-tareas
+env: 
+  NODE_ENV: production
+  MONGO_URI: mongodb+srv://valenpga:RAisGFKgupnrMSXI@cluster0.tq01huo.mongodb.net/Lista-de-Tareas
+buildCommand: npm run build
+startCommand: npm start
+services:
+  backend:
+    buildCommand: npm run build
+    startCommand: npm start
+    env: 
+      PORT: 5173
+  frontend:
+    buildCommand: npm run build
+    startCommand: npm run dev
+    env: 
+      PORT: 3000
